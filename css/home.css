@@ -98,22 +98,73 @@ body {
   margin: 0 0px 0 32px;
 }
 
-/* Hero Section */
-.hero {
-  background: url("hero-background.jpg") no-repeat center center/cover;
+.hero-section {
+  position: relative;
+  width: 100%;
   height: 300px;
+  background: linear-gradient(to right, #b69e22, rgba(255, 255, 255, 0));
+  overflow: hidden;
+  border-radius: 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: left;
+  justify-content: space-between;
+  border-radius: 16px;
+  opacity: 0.99;
+  margin-top: 16px;
 }
 
-.hero-text h1 {
-  font-size: 36px;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
-  border-radius: 5px;
+.hero-content {
+  position: absolute;
+  z-index: 2;
+  width: 542px;
+  height: 119px;
+  text-align: left;
+
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.hero-content h1 {
+  margin: 0;
+  padding-left: 40px;
+  font: normal normal 900 48px/64px "Cooper", serif;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.hero-family {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1195px;
+  height: 375px;
+  background: transparent url("../assets/images/home_page/Arabfamily@2x.png") 0%
+    0% no-repeat padding-box;
+  background-size: contain; /* Ensures the image scales properly */
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    height: 200px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-family {
+    max-width: 50%;
+  }
 }
 
 /* Services Section */
