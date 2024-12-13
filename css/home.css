@@ -169,43 +169,107 @@ body {
 
 /* Services Section */
 .services {
-  background-color: #f9f9f9;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.services .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-}
-
-.service-box {
-  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  transition: transform 0.3s ease, background 0.3s ease;
+  margin-bottom: 59px;
+  margin-top: 32px;
+}
+
+/* Service Box */
+.service-box {
+  position: relative;
+  width: 247px;
+  height: 120px;
+  border-radius: 11px;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.plan_usion {
+  width: 48px;
+  height: 37px;
+  opacity: 1;
+}
+.Union10 {
+  width: 48px;
+  height: 48px;
+}
+.world {
+  width: 38px;
+  height: 48px;
+}
+.Union3 {
+  width: 48px;
+  height: 38px;
+}
+.Union4 {
+  width: 48px;
+  height: 44px;
+}
+.Union5 {
+  width: 38px;
+  height: 48px;
+}
+.Union6 {
+  width: 48px;
+  height: 48px;
+}
+.Union7 {
+  width: 48px;
+  height: 48px;
+}
+
+.text_styling {
   text-align: center;
-  cursor: pointer;
+  font: normal normal normal 22px/24px Gabriola;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
 }
 
-.service-box:hover {
-  transform: scale(1.05);
-  background: #ffd700;
-  color: #000;
+/* Service Image */
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.service-box .icon {
-  height: 50px;
-  width: 50px;
-  background-color: #ddd;
-  margin: 0 auto 10px;
-  border-radius: 50%;
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 22, 36, 0.6), #bd9c00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
-.service-box h3 {
-  font-size: 16px;
+/* Overlay Content */
+.overlay-content {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Arial", sans-serif;
+  line-height: 1.5;
+}
+
+/* Hover Effects */
+.service-box:hover .service-image {
+  transform: scale(1.1);
+}
+
+.service-box:hover .overlay {
+  opacity: 0;
 }
 
 /* Footer */
