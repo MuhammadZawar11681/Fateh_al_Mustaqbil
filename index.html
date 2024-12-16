@@ -10,9 +10,11 @@
   <body>
     <section class="main-section">
       <!-- Yellow Header -->
+      <!-- Yellow Header (Localized for Arabic with RTL) -->
+      <!-- Yellow Header -->
       <header class="yellow-header">
         <div class="container">
-          <span>
+          <span class="phone-info">
             <img
               src="./assets/images/home_page/phone.png"
               alt="Phone Icon"
@@ -23,25 +25,21 @@
                 margin-right: 14px;
               "
             />
-            +966 123 456 897
+            <span class="phone-text">+966 123 456 897</span>
           </span>
-          <span style="margin: 0 28px 0 43px; border: 1px #ffffff; opacity: 1"
-            >|</span
-          >
-          <span>
+          <span style="margin: 0 28px; border: 1px #ffffff; opacity: 1">|</span>
+          <span class="location-info">
             <img
               src="./assets/images/home_page/map-pin@2x.png"
               alt="Location Icon"
               style="width: 13px; height: 16px; vertical-align: middle"
             />
-            <span style="margin-right: 46px; margin-left: 16px">
-              Al noor industrial area, Riyadh</span
-            >
+            <span class="location-text">Al noor industrial area, Riyadh</span>
           </span>
           <span>
-            <select class="lag-selector">
-              <option value="eng">English</option>
-              <option value="arb">Arabic</option>
+            <select id="language-selector" class="lag-selector">
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
             </select>
           </span>
         </div>
@@ -57,10 +55,34 @@
             />
           </div>
           <nav>
-            <a href="/index.html" class="active">Home</a>
-            <a href="/pages/services.html" class="btn-pdn">Services</a>
-            <a href="/pages/about.html" class="btn-pdn">About</a>
-            <a href="/pages/contact.html" class="btn-pdn">Contact</a>
+            <a
+              href="/index.html"
+              class="active"
+              data-en="Home"
+              data-ar="الرئيسية"
+              >Home</a
+            >
+            <a
+              href="/pages/services.html"
+              class="btn-pdn"
+              data-en="Services"
+              data-ar="الخدمات"
+              >Services</a
+            >
+            <a
+              href="/pages/about.html"
+              class="btn-pdn"
+              data-en="About"
+              data-ar="من نحن"
+              >About</a
+            >
+            <a
+              href="/pages/contact.html"
+              class="btn-pdn"
+              data-en="Contact"
+              data-ar="اتصل بنا"
+              >Contact</a
+            >
           </nav>
         </div>
       </header>
@@ -273,5 +295,49 @@
       </div>
       <p>&copy; 2023 Fateh Al Mustaqbil. All rights reserved.</p>
     </footer>
+    <!-- JavaScript -->
+    <script>
+      const languageSelector = document.getElementById("language-selector");
+
+      // Function to switch between English and Arabic
+      function switchLanguage(lang) {
+        const phoneText = document.querySelector(".phone-text");
+        const locationText = document.querySelector(".location-text");
+        const navLinks = document.querySelectorAll("nav a");
+
+        if (lang === "ar") {
+          document.body.style.direction = "rtl"; // Right-to-left
+          document.body.style.textAlign = "right";
+
+          phoneText.textContent = "+966 123 456 897"; // Arabic equivalent can remain the same
+          locationText.textContent = "منطقة النور الصناعية، الرياض";
+
+          navLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-ar");
+          });
+        } else {
+          document.body.style.direction = "ltr"; // Left-to-right
+          document.body.style.textAlign = "left";
+
+          phoneText.textContent = "+966 123 456 897";
+          locationText.textContent = "Al noor industrial area, Riyadh";
+
+          navLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-en");
+          });
+        }
+      }
+
+      // Event Listener for Language Selector
+      languageSelector.addEventListener("change", (e) => {
+        const selectedLanguage = e.target.value;
+        switchLanguage(selectedLanguage);
+      });
+
+      // Set default language to English on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        switchLanguage("en");
+      });
+    </script>
   </body>
 </html>
