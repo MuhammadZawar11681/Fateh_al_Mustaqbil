@@ -10,8 +10,10 @@
   <body>
     <section class="main-section">
       <!-- Yellow Header -->
+      <!-- Yellow Header -->
       <header class="yellow-header">
         <div class="container">
+          <!-- Phone Icon and Text -->
           <span>
             <img
               src="./assets/images/home_page/phone.png"
@@ -23,23 +25,32 @@
                 margin-right: 14px;
               "
             />
-            +966 123 456 897
+            <span class="phone-text">+966 123 456 897</span>
           </span>
+
+          <!-- Separator -->
           <span style="margin: 0 28px 0 43px; border: 1px #ffffff; opacity: 1"
             >|</span
           >
+
+          <!-- Location Icon and Text -->
           <span>
             <img
               src="./assets/images/home_page/map-pin@2x.png"
               alt="Location Icon"
               style="width: 13px; height: 16px; vertical-align: middle"
             />
-            <span style="margin-right: 46px; margin-left: 16px">
-              Al noor industrial area, Riyadh</span
+            <span
+              style="margin-right: 46px; margin-left: 16px"
+              class="location-text"
             >
+              Al noor industrial area, Riyadh
+            </span>
           </span>
+
+          <!-- Language Selector Dropdown -->
           <span>
-            <select class="lag-selector">
+            <select class="lag-selector" id="language-selector">
               <option value="eng">English</option>
               <option value="arb">Arabic</option>
             </select>
@@ -57,20 +68,52 @@
             />
           </div>
           <nav>
-            <a href="/index.html" class="active">Home</a>
-            <a href="/pages/services.html" class="btn-pdn">Services</a>
-            <a href="/pages/about.html" class="btn-pdn">About</a>
-            <a href="/pages/contact.html" class="btn-pdn">Contact</a>
+            <a
+              href="/index.html"
+              class="active"
+              data-en="Home"
+              data-ar="الرئيسية"
+            >
+              Home
+            </a>
+            <a
+              href="/pages/services.html"
+              class="btn-pdn"
+              data-en="Services"
+              data-ar="الخدمات"
+            >
+              Services
+            </a>
+            <a
+              href="/pages/about.html"
+              class="btn-pdn"
+              data-en="About"
+              data-ar="من نحن"
+            >
+              About
+            </a>
+            <a
+              href="/pages/contact.html"
+              class="btn-pdn"
+              data-en="Contact"
+              data-ar="اتصل بنا"
+            >
+              Contact
+            </a>
           </nav>
         </div>
       </header>
 
       <!-- Hero Section -->
-
+      <!-- Hero Section -->
       <section class="hero-section">
         <div class="hero-content">
-          <h1>Your Gateway to</h1>
-          <h1>World Adventure</h1>
+          <h1 data-en="Your Gateway to" data-ar="بوابتك إلى">
+            Your Gateway to
+          </h1>
+          <h1 data-en="World Adventure" data-ar="مغامرات العالم">
+            World Adventure
+          </h1>
         </div>
         <div class="hero-images">
           <img
@@ -78,13 +121,13 @@
             alt="Background"
             class="hero-bg"
           />
-
           <div class="hero-family"></div>
         </div>
       </section>
 
       <!-- Services Section -->
 
+      <!-- Services Section -->
       <section class="services">
         <!-- Service Box 1 -->
         <a class="service-box" href="/services">
@@ -100,9 +143,18 @@
                 alt="plan_union"
                 class="plan_usion"
               /><br />
-
-              <span class="text_styling">International And</span><br />
-              <span class="text_styling">Domestic Flight Tickets</span>
+              <span
+                class="text_styling"
+                data-en="International And"
+                data-ar="الرحلات الدولية"
+                >International And</span
+              ><br />
+              <span
+                class="text_styling"
+                data-en="Domestic Flight Tickets"
+                data-ar="وتذاكر الطيران المحلية"
+                >Domestic Flight Tickets</span
+              >
             </div>
           </div>
         </a>
@@ -111,7 +163,7 @@
         <a class="service-box" href="/services">
           <img
             src="./assets/images/home_page/booknow@2x.png"
-            alt="Flight Tickets"
+            alt="Hotel Reservation"
             class="service-image"
           />
           <div class="overlay">
@@ -121,17 +173,27 @@
                 alt="plan_union"
                 class="Union10"
               /><br />
-
-              <span class="text_styling">Hotel Reservation</span><br />
-              <span class="text_styling">World Wide</span>
+              <span
+                class="text_styling"
+                data-en="Hotel Reservation"
+                data-ar="حجوزات الفنادق"
+                >Hotel Reservation</span
+              ><br />
+              <span
+                class="text_styling"
+                data-en="World Wide"
+                data-ar="في جميع أنحاء العالم"
+                >World Wide</span
+              >
             </div>
           </div>
         </a>
+
         <!-- Service Box 3 -->
         <a class="service-box" href="/services">
           <img
             src="./assets/images/home_page/laptop@2x.png"
-            alt="Flight Tickets"
+            alt="Visa Services"
             class="service-image"
           />
           <div class="overlay">
@@ -141,17 +203,24 @@
                 alt="plan_union"
                 class="world"
               /><br />
-
-              <span class="text_styling">Visa</span><br />
-              <span class="text_styling">Services</span>
+              <span
+                class="text_styling"
+                data-en="Visa"
+                data-ar="خدمات التأشيرات"
+                >Visa</span
+              ><br />
+              <span class="text_styling" data-en="Services" data-ar="خدمات"
+                >Services</span
+              >
             </div>
           </div>
         </a>
+
         <!-- Service Box 4 -->
         <a class="service-box" href="/services">
           <img
             src="./assets/images/home_page/card@2x.png"
-            alt="Flight Tickets"
+            alt="Driving License"
             class="service-image"
           />
           <div class="overlay">
@@ -161,17 +230,27 @@
                 alt="plan_union"
                 class="Union3"
               /><br />
-
-              <span class="text_styling">International</span><br />
-              <span class="text_styling">Driving License</span>
+              <span
+                class="text_styling"
+                data-en="International"
+                data-ar="رخصة القيادة"
+                >International</span
+              ><br />
+              <span
+                class="text_styling"
+                data-en="Driving License"
+                data-ar="الدولية"
+                >Driving License</span
+              >
             </div>
           </div>
         </a>
+
         <!-- Service Box 5 -->
         <a class="service-box" href="/services">
           <img
             src="./assets/images/home_page/plan@2x.png"
-            alt="Flight Tickets"
+            alt="Airport VIP Services"
             class="service-image"
           />
           <div class="overlay">
@@ -181,17 +260,27 @@
                 alt="plan_union"
                 class="Union4"
               /><br />
-
-              <span class="text_styling">Airport VIP Services</span><br />
-              <span class="text_styling">(Meet & Greet)</span>
+              <span
+                class="text_styling"
+                data-en="Airport VIP Services"
+                data-ar="خدمات كبار الشخصيات بالمطار"
+                >Airport VIP Services</span
+              ><br />
+              <span
+                class="text_styling"
+                data-en="(Meet & Greet)"
+                data-ar="(الاستقبال والترحيب)"
+                >(Meet & Greet)</span
+              >
             </div>
           </div>
         </a>
+
         <!-- Service Box 6 -->
         <a class="service-box" href="/services">
           <img
             src="./assets/images/home_page/hand@2x.png"
-            alt="Flight Tickets"
+            alt="House Maid Transportation"
             class="service-image"
           />
           <div class="overlay">
@@ -201,17 +290,27 @@
                 alt="plan_union"
                 class="Union5"
               /><br />
-
-              <span class="text_styling">House Maid</span><br />
-              <span class="text_styling">Transportation</span>
+              <span
+                class="text_styling"
+                data-en="House Maid"
+                data-ar="خدمات الخادمات"
+                >House Maid</span
+              ><br />
+              <span
+                class="text_styling"
+                data-en="Transportation"
+                data-ar="النقل"
+                >Transportation</span
+              >
             </div>
           </div>
         </a>
+
         <!-- Service Box 7 -->
         <a class="service-box" href="/services">
           <img
             src="./assets/images/home_page/city@2x.png"
-            alt="Flight Tickets"
+            alt="Tourism Packages"
             class="service-image"
           />
           <div class="overlay">
@@ -221,17 +320,21 @@
                 alt="plan_union"
                 class="Union6"
               /><br />
-
-              <span class="text_styling">Tourism</span><br />
-              <span class="text_styling">Packages</span>
+              <span class="text_styling" data-en="Tourism" data-ar="حزم السياحة"
+                >Tourism</span
+              ><br />
+              <span class="text_styling" data-en="Packages" data-ar="العروض"
+                >Packages</span
+              >
             </div>
           </div>
         </a>
+
         <!-- Service Box 8 -->
         <a class="service-box" href="/services">
           <img
             src="./assets/images/home_page/Kaaba@2x.png"
-            alt="Flight Tickets"
+            alt="Umrah & Ziyara Services"
             class="service-image"
           />
           <div class="overlay">
@@ -241,37 +344,246 @@
                 alt="plan_union"
                 class="Union7"
               /><br />
-
-              <span class="text_styling">Umrah & Ziyara</span><br />
-              <span class="text_styling">Services</span>
+              <span
+                class="text_styling"
+                data-en="Umrah & Ziyara"
+                data-ar="خدمات العمرة والزيارة"
+                >Umrah & Ziyara</span
+              ><br />
+              <span class="text_styling" data-en="Services" data-ar="خدمات"
+                >Services</span
+              >
             </div>
           </div>
         </a>
-
-        <!-- Add more service boxes by copying this structure -->
       </section>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <!-- Footer Section -->
+    <footer id="localized-footer">
+      <!-- Footer Logo -->
       <div class="footer-logo">
         <img
           src="/assets/images/home_page/Footer_LOGO@2x.png"
           alt="Fateh Al Mustaqbil"
         />
       </div>
+
+      <!-- Footer Links -->
       <div class="footer-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="#" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="#" data-en="About" data-ar="من نحن">About</a>
+        <a href="#" data-en="Services" data-ar="خدماتنا">Services</a>
+        <a href="#" data-en="Contact" data-ar="اتصل بنا">Contact</a>
       </div>
+
+      <!-- Social Icons -->
       <div class="social-icons">
         <img src="/assets/images/home_page/facebook@2x.png" alt="Facebook" />
         <img src="/assets/images/home_page/linkedin@2x.png" alt="LinkedIn" />
         <img src="/assets/images/home_page/X@2x.png" alt="X" />
       </div>
-      <p>&copy; 2023 Fateh Al Mustaqbil. All rights reserved.</p>
+
+      <!-- Footer Text -->
+      <p
+        class="footer-text"
+        data-en="&copy; 2023 Fateh Al Mustaqbil. All rights reserved."
+        data-ar="&copy; 2023 فتح المستقبل. جميع الحقوق محفوظة."
+      >
+        &copy; 2023 Fateh Al Mustaqbil. All rights reserved.
+      </p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+      const languageSelector = document.getElementById("language-selector");
+
+      // Switch language function
+      function switchLanguage(lang) {
+        const phoneText = document.querySelector(".phone-text");
+        const locationText = document.querySelector(".location-text");
+        const navLinks = document.querySelectorAll("nav a");
+
+        if (lang === "arb") {
+          document.body.style.direction = "rtl";
+          document.body.style.textAlign = "right";
+
+          phoneText.textContent = "+966 123 456 897"; // Arabic stays the same
+          locationText.textContent = "منطقة النور الصناعية، الرياض";
+
+          navLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-ar");
+          });
+        } else {
+          document.body.style.direction = "ltr";
+          document.body.style.textAlign = "left";
+
+          phoneText.textContent = "+966 123 456 897";
+          locationText.textContent = "Al noor industrial area, Riyadh";
+
+          navLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-en");
+          });
+        }
+      }
+
+      // Event listener for language switcher
+      languageSelector.addEventListener("change", (e) => {
+        const selectedLang = e.target.value;
+        switchLanguage(selectedLang);
+      });
+
+      // Default language on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        switchLanguage("eng");
+      });
+
+      function switchHeroSectionLanguage(lang) {
+        const heroHeadings = document.querySelectorAll(".hero-content h1");
+        const heroSection = document.querySelector(".hero-section");
+        const heroImages = document.querySelector(".hero-images");
+        const heroBackground = document.querySelector(".hero-bg");
+
+        if (lang === "arb") {
+          document.body.style.direction = "rtl";
+
+          // Update text to Arabic
+          heroHeadings.forEach((heading) => {
+            heading.textContent = heading.getAttribute("data-ar");
+          });
+
+          // Flip background image and family container for RTL
+          heroSection.style.textAlign = "right";
+          heroImages.style.justifyContent = "flex-end";
+          heroBackground.style.transform = "scaleX(-1)";
+        } else {
+          document.body.style.direction = "ltr";
+
+          // Update text to English
+          heroHeadings.forEach((heading) => {
+            heading.textContent = heading.getAttribute("data-en");
+          });
+
+          // Reset background image and family container for LTR
+          heroSection.style.textAlign = "left";
+          heroImages.style.justifyContent = "flex-start";
+          heroBackground.style.transform = "scaleX(1)";
+        }
+      }
+
+      // Connect with the main language selector
+      languageSelector.addEventListener("change", (e) => {
+        const selectedLang = e.target.value;
+        switchHeroSectionLanguage(selectedLang);
+      });
+
+      // Initialize default state
+      window.addEventListener("DOMContentLoaded", () => {
+        switchHeroSectionLanguage("eng");
+      });
+
+      function switchServicesLanguage(lang) {
+        const serviceTexts = document.querySelectorAll(".text_styling");
+        const servicesSection = document.querySelector(".services");
+
+        if (lang === "arb") {
+          document.body.style.direction = "rtl";
+          servicesSection.style.textAlign = "right";
+
+          serviceTexts.forEach((text) => {
+            text.textContent = text.getAttribute("data-ar");
+          });
+        } else {
+          document.body.style.direction = "ltr";
+          servicesSection.style.textAlign = "left";
+
+          serviceTexts.forEach((text) => {
+            text.textContent = text.getAttribute("data-en");
+          });
+        }
+      }
+
+      languageSelector.addEventListener("change", (e) => {
+        const selectedLang = e.target.value;
+        switchServicesLanguage(selectedLang);
+      });
+
+      window.addEventListener("DOMContentLoaded", () => {
+        switchServicesLanguage("eng");
+      });
+
+      // footer
+
+      // Switch language function
+      function switchLanguage(lang) {
+        const phoneText = document.querySelector(".phone-text");
+        const locationText = document.querySelector(".location-text");
+        const navLinks = document.querySelectorAll("nav a");
+        const footerLinks = document.querySelectorAll(".footer-links a");
+        const footerText = document.querySelector(".footer-text");
+        const footerLogo = document.querySelector(".footer-logo img");
+        const headerPhoneText = document.querySelector(".phone-text");
+        const headerLocationText = document.querySelector(".location-text");
+
+        // Switch for navigation links
+        navLinks.forEach((link) => {
+          if (lang === "arb") {
+            link.textContent = link.getAttribute("data-ar");
+          } else {
+            link.textContent = link.getAttribute("data-en");
+          }
+        });
+
+        // Switch for footer links
+        footerLinks.forEach((link) => {
+          if (lang === "arb") {
+            link.textContent = link.getAttribute("data-ar");
+          } else {
+            link.textContent = link.getAttribute("data-en");
+          }
+        });
+
+        // Switch footer text
+        if (lang === "arb") {
+          footerText.innerHTML = footerText.getAttribute("data-ar");
+        } else {
+          footerText.innerHTML = footerText.getAttribute("data-en");
+        }
+
+        // Switch phone number and location for header
+        if (lang === "arb") {
+          headerPhoneText.textContent = "+966 123 456 897"; // Arabic phone number stays the same
+          headerLocationText.textContent = "منطقة النور الصناعية، الرياض";
+        } else {
+          headerPhoneText.textContent = "+966 123 456 897";
+          headerLocationText.textContent = "Al noor industrial area, Riyadh";
+        }
+
+        // Adjust page direction for Arabic
+        if (lang === "arb") {
+          document.body.style.direction = "rtl";
+          document.body.style.textAlign = "right";
+          footerLogo.style.transform = "scaleX(-1)"; // Optional: mirror footer logo for Arabic
+        } else {
+          document.body.style.direction = "ltr";
+          document.body.style.textAlign = "left";
+          footerLogo.style.transform = "scaleX(1)"; // Reset logo direction for English
+        }
+      }
+
+      // Event listener for language switcher
+      languageSelector.addEventListener("change", (e) => {
+        const selectedLang = e.target.value;
+        switchLanguage(selectedLang);
+      });
+
+      // Default language on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        switchLanguage("eng");
+      });
+
+      // yellow header
+    </script>
   </body>
 </html>
