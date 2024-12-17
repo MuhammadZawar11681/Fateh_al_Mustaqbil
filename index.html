@@ -395,14 +395,21 @@
 
     <!-- JavaScript -->
     <script>
-      const languageSelector = document.getElementById("language-selector");
-
-      // Switch language function
-      function switchLanguage(lang) {
+      // Function to apply language changes for different sections of the page
+      function setLanguage(lang) {
         const phoneText = document.querySelector(".phone-text");
         const locationText = document.querySelector(".location-text");
         const navLinks = document.querySelectorAll("nav a");
+        const footerLinks = document.querySelectorAll(".footer-links a");
+        const footerText = document.querySelector(".footer-text");
+        const serviceTexts = document.querySelectorAll(".text_styling");
+        const heroHeadings = document.querySelectorAll(".hero-content h1");
+        const heroSection = document.querySelector(".hero-section");
+        const heroImages = document.querySelector(".hero-images");
+        const heroBackground = document.querySelector(".hero-bg");
+        const servicesSection = document.querySelector(".services");
 
+        // Switch for general page text content (header, footer, etc.)
         if (lang === "arb") {
           document.body.style.direction = "rtl";
           document.body.style.textAlign = "right";
@@ -413,6 +420,26 @@
           navLinks.forEach((link) => {
             link.textContent = link.getAttribute("data-ar");
           });
+
+          footerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-ar");
+          });
+
+          footerText.innerHTML = footerText.getAttribute("data-ar");
+
+          serviceTexts.forEach((text) => {
+            text.textContent = text.getAttribute("data-ar");
+          });
+
+          heroHeadings.forEach((heading) => {
+            heading.textContent = heading.getAttribute("data-ar");
+          });
+
+          heroSection.style.textAlign = "right";
+          heroImages.style.justifyContent = "flex-end";
+          heroBackground.style.transform = "scaleX(-1)"; // Optional: flip the hero background image
+
+          servicesSection.style.textAlign = "right";
         } else {
           document.body.style.direction = "ltr";
           document.body.style.textAlign = "left";
@@ -423,164 +450,46 @@
           navLinks.forEach((link) => {
             link.textContent = link.getAttribute("data-en");
           });
-        }
-      }
 
-      // Event listener for language switcher
-      languageSelector.addEventListener("change", (e) => {
-        const selectedLang = e.target.value;
-        switchLanguage(selectedLang);
-      });
-
-      // Default language on page load
-      window.addEventListener("DOMContentLoaded", () => {
-        switchLanguage("eng");
-      });
-
-      function switchHeroSectionLanguage(lang) {
-        const heroHeadings = document.querySelectorAll(".hero-content h1");
-        const heroSection = document.querySelector(".hero-section");
-        const heroImages = document.querySelector(".hero-images");
-        const heroBackground = document.querySelector(".hero-bg");
-
-        if (lang === "arb") {
-          document.body.style.direction = "rtl";
-
-          // Update text to Arabic
-          heroHeadings.forEach((heading) => {
-            heading.textContent = heading.getAttribute("data-ar");
+          footerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-en");
           });
 
-          // Flip background image and family container for RTL
-          heroSection.style.textAlign = "right";
-          heroImages.style.justifyContent = "flex-end";
-          heroBackground.style.transform = "scaleX(-1)";
-        } else {
-          document.body.style.direction = "ltr";
-
-          // Update text to English
-          heroHeadings.forEach((heading) => {
-            heading.textContent = heading.getAttribute("data-en");
-          });
-
-          // Reset background image and family container for LTR
-          heroSection.style.textAlign = "left";
-          heroImages.style.justifyContent = "flex-start";
-          heroBackground.style.transform = "scaleX(1)";
-        }
-      }
-
-      // Connect with the main language selector
-      languageSelector.addEventListener("change", (e) => {
-        const selectedLang = e.target.value;
-        switchHeroSectionLanguage(selectedLang);
-      });
-
-      // Initialize default state
-      window.addEventListener("DOMContentLoaded", () => {
-        switchHeroSectionLanguage("eng");
-      });
-
-      function switchServicesLanguage(lang) {
-        const serviceTexts = document.querySelectorAll(".text_styling");
-        const servicesSection = document.querySelector(".services");
-
-        if (lang === "arb") {
-          document.body.style.direction = "rtl";
-          servicesSection.style.textAlign = "right";
-
-          serviceTexts.forEach((text) => {
-            text.textContent = text.getAttribute("data-ar");
-          });
-        } else {
-          document.body.style.direction = "ltr";
-          servicesSection.style.textAlign = "left";
+          footerText.innerHTML = footerText.getAttribute("data-en");
 
           serviceTexts.forEach((text) => {
             text.textContent = text.getAttribute("data-en");
           });
+
+          heroHeadings.forEach((heading) => {
+            heading.textContent = heading.getAttribute("data-en");
+          });
+
+          heroSection.style.textAlign = "left";
+          heroImages.style.justifyContent = "flex-start";
+          heroBackground.style.transform = "scaleX(1)"; // Reset the hero background image
+
+          servicesSection.style.textAlign = "left";
         }
       }
 
-      languageSelector.addEventListener("change", (e) => {
-        const selectedLang = e.target.value;
-        switchServicesLanguage(selectedLang);
-      });
+      // Event listener for language switcher (for Home page)
+      const languageSelector = document.getElementById("language-selector");
 
-      window.addEventListener("DOMContentLoaded", () => {
-        switchServicesLanguage("eng");
-      });
-
-      // footer
-
-      // Switch language function
-      function switchLanguage(lang) {
-        const phoneText = document.querySelector(".phone-text");
-        const locationText = document.querySelector(".location-text");
-        const navLinks = document.querySelectorAll("nav a");
-        const footerLinks = document.querySelectorAll(".footer-links a");
-        const footerText = document.querySelector(".footer-text");
-        const headerPhoneText = document.querySelector(".phone-text");
-        const headerLocationText = document.querySelector(".location-text");
-
-        // Switch for navigation links
-        navLinks.forEach((link) => {
-          if (lang === "arb") {
-            link.textContent = link.getAttribute("data-ar");
-          } else {
-            link.textContent = link.getAttribute("data-en");
-          }
+      if (languageSelector) {
+        languageSelector.addEventListener("change", (e) => {
+          const selectedLang = e.target.value;
+          localStorage.setItem("selectedLang", selectedLang); // Store the selected language in localStorage
+          setLanguage(selectedLang); // Apply the language change
         });
-
-        // Switch for footer links
-        footerLinks.forEach((link) => {
-          if (lang === "arb") {
-            link.textContent = link.getAttribute("data-ar");
-          } else {
-            link.textContent = link.getAttribute("data-en");
-          }
-        });
-
-        // Switch footer text
-        if (lang === "arb") {
-          footerText.innerHTML = footerText.getAttribute("data-ar");
-        } else {
-          footerText.innerHTML = footerText.getAttribute("data-en");
-        }
-
-        // Switch phone number and location for header
-        if (lang === "arb") {
-          headerPhoneText.textContent = "+966 123 456 897"; // Arabic phone number stays the same
-          headerLocationText.textContent = "منطقة النور الصناعية، الرياض";
-        } else {
-          headerPhoneText.textContent = "+966 123 456 897";
-          headerLocationText.textContent = "Al noor industrial area, Riyadh";
-        }
-
-        // Adjust page direction for Arabic
-        if (lang === "arb") {
-          document.body.style.direction = "rtl";
-          document.body.style.textAlign = "right";
-          footerLogo.style.transform = "scaleX(-1)"; // Optional: mirror footer logo for Arabic
-        } else {
-          document.body.style.direction = "ltr";
-          document.body.style.textAlign = "left";
-          footerLogo.style.transform = "scaleX(1)"; // Reset logo direction for English
-        }
       }
-
-      // Event listener for language switcher
-      languageSelector.addEventListener("change", (e) => {
-        const selectedLang = e.target.value;
-        switchLanguage(selectedLang);
-      });
 
       // Default language on page load
       window.addEventListener("DOMContentLoaded", () => {
-        switchLanguage("eng");
+        const selectedLang = localStorage.getItem("selectedLang") || "eng"; // Check localStorage or default to English
+        languageSelector.value = selectedLang; // Set the selector to the saved language
+        setLanguage(selectedLang); // Apply the language based on the saved or default language
       });
-
-      // yellow header
     </script>
   </body>
 </html>
