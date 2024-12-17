@@ -292,6 +292,7 @@
     function setLanguage(lang) {
       const serviceTexts = document.querySelectorAll(".service-text");
       const footerLinks = document.querySelectorAll(".footer-links a");
+      const footerText = document.querySelector(".footer-text");
       const headerLinks = document.querySelectorAll("nav a");
       // const serviceItems = document.querySelectorAll(".service-item");
       const serviceImages = document.querySelectorAll(".service-image");
@@ -318,6 +319,8 @@
         footerLinks.forEach((link) => {
           link.textContent = link.getAttribute("data-ar");
         });
+
+        footerText.innerHTML = footerText.getAttribute("data-ar");
 
         // Reverse the order of service items
         serviceItems.forEach((item) => {

@@ -171,6 +171,7 @@
     function setLanguage(lang) {
       const aboutTexts = document.querySelectorAll(".about-text");
       const footerLinks = document.querySelectorAll(".footer-links a");
+      const footerText = document.querySelector(".footer-text");
       const headerLinks = document.querySelectorAll("nav a");
       const imageContent = document.querySelector(".image-content img");
 
@@ -193,6 +194,8 @@
         footerLinks.forEach((link) => {
           link.textContent = link.getAttribute("data-ar");
         });
+
+        footerText.innerHTML = footerText.getAttribute("data-ar");
       } else {
         document.body.style.direction = "ltr";
         document.body.style.textAlign = "left";
